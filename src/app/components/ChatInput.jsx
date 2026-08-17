@@ -12,54 +12,32 @@ export default function ChatInput({ onSend, loading }) {
     setText("");
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleSubmit();
-    }
-  };
-
   return (
-    <footer className="bg-white border-t border-gray-200 p-4">
-      <div className="max-w-3xl mx-auto flex gap-2">
-
+    <footer className="px-3 pb-4 pt-2">
+      <div
+        className={`mx-auto flex max-w-3xl gap-2 rounded-2xl border bg-white/10 p-2 backdrop-blur-xl ${
+          text.trim() ? "border-teal-400" : "border-teal-400/50"
+        }`}
+      >
         <input
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          onKeyDown={handleKeyDown}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleSubmit();
+          }}
           placeholder="Prompt here"
           disabled={loading}
-          className="
-            flex-1
-            px-4
-            py-3
-            border
-            border-gray-300
-            rounded-lg
-            text-gray-800
-            outline-none
-            focus:ring-2
-            focus:ring-[#3c7879]
-          "
+          className="min-w-0 flex-1 bg-transparent px-3 py-2 text-white outline-none placeholder:text-white/40"
         />
 
         <button
           onClick={handleSubmit}
           disabled={loading || !text.trim()}
-          className="
-            px-5
-            py-3
-            bg-[#3c7879]
-            text-white
-            rounded-lg
-            hover:bg-[#275d5d]
-            disabled:opacity-50
-          "
+          className="rounded-xl bg-teal-500 px-5 py-2 text-white transition hover:bg-teal-600 disabled:opacity-50"
         >
           {loading ? "..." : "Send"}
         </button>
-
       </div>
     </footer>
   );
