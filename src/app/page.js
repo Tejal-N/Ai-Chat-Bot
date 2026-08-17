@@ -74,7 +74,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0a273b] flex flex-col">
+    <main className="min-h-screen bg-linear-to-b from-[#01070b] via-[#021018] to-[#03141f] flex flex-col">
 
       <Header />
 
@@ -107,7 +107,7 @@ export default function Home() {
 
           {loading && (
             <div className="flex justify-start">
-              <div className="bg-[#bbe1fa] text-[#1b262c] px-4 py-3 rounded-xl">
+              <div className="rounded-xl border border-teal-400/40 bg-teal-400/10 px-4 py-3 text-teal-100 backdrop-blur-xl">
                 Gemini is thinking...
               </div>
             </div>
