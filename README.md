@@ -17,3 +17,26 @@ A simple AI chatbot built with **Next.js, React, Tailwind CSS, and Google Gemini
 - **Styling:** Tailwind CSS
 - **Language:** JavaScript
 - **AI:** Google Gemini API
+
+
+## Project Structure
+```
+google-ai-chat/
+│
+├── src/
+│   └── app/
+│       ├── api/
+│       │   └── chat/
+│       │       └── route.js
+│       ├── components/
+│       │   ├── Header.jsx
+│       │   ├── ChatInput.jsx
+│       │   └── ChatMessage.jsx
+│       └── page.js
+│
+├── .env.local.example
+├── .gitignore
+├── package.json
+└── README.md
+```
+
